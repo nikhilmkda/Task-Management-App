@@ -3,6 +3,7 @@ import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:provider/provider.dart';
 import 'package:task_management_app_thiran_tech/controller/parameters.dart';
 import 'package:task_management_app_thiran_tech/view/custom_checkbox.dart';
+import 'package:task_management_app_thiran_tech/view/fl_chart.dart';
 
 import '../controller/task_manage_provider.dart';
 
@@ -143,7 +144,7 @@ class DashBoardDesign extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: 60,
+            height: 45,
           ),
           Text(
             "Project Progress",
@@ -228,7 +229,7 @@ class DashBoardDesign extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: 60,
+            height: 45,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -247,8 +248,10 @@ class DashBoardDesign extends StatelessWidget {
                   children: [
                     Text(
                       ' Weekly',
-                      style:
-                          TextStyle(color: Colors.grey.shade400, fontSize: 12),
+                      style: TextStyle(
+                          color: Colors.grey.withOpacity(0.8),
+                          fontSize: 12,
+                          fontWeight: FontWeight.bold),
                     ),
                     Icon(
                       Icons.arrow_drop_down,
@@ -258,7 +261,111 @@ class DashBoardDesign extends StatelessWidget {
                 ),
               ),
             ],
-          )
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 0, right: 0),
+            child: SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Column(
+                children: [
+                  Row(
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "10 ",
+                            style: secondaryText,
+                          ),
+                          SizedBox(
+                            height: 20,
+                          ),
+                          Text(
+                            "5 ",
+                            style: secondaryText,
+                          ),
+                          SizedBox(
+                            height: 20,
+                          ),
+                          Text(
+                            "2 ",
+                            style: secondaryText,
+                          ),
+                          SizedBox(
+                            height: 20,
+                          ),
+                          Text(
+                            "0 ",
+                            style: secondaryText,
+                          ),
+                        ],
+                      ),
+                      Container(
+                        height: 150,
+                        child: MyCurvedChart(),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      SizedBox(
+                        width: 15,
+                      ),
+                      Text(
+                        "Sun",
+                        style: secondaryText,
+                      ),
+                      SizedBox(
+                        width: 30,
+                      ),
+                      Text(
+                        "Mon",
+                        style: secondaryText,
+                      ),
+                      SizedBox(
+                        width: 30,
+                      ),
+                      Text(
+                        "Tue",
+                        style: secondaryText,
+                      ),
+                      SizedBox(
+                        width: 30,
+                      ),
+                      Text(
+                        "Wed",
+                        style: secondaryText,
+                      ),
+                      SizedBox(
+                        width: 30,
+                      ),
+                      Text(
+                        "Thu",
+                        style: secondaryText,
+                      ),
+                      SizedBox(
+                        width: 30,
+                      ),
+                      Text(
+                        "Fri",
+                        style: secondaryText,
+                      ),
+                      SizedBox(
+                        width: 30,
+                      ),
+                      Text(
+                        "Sat",
+                        style: secondaryText,
+                      ),
+                    ],
+                  )
+                ],
+              ),
+            ),
+          ),
         ]),
       ),
     );

@@ -5,6 +5,7 @@ import 'package:task_management_app_thiran_tech/view/custom_container.dart';
 import 'package:task_management_app_thiran_tech/view/daily_task_custom_widget.dart';
 
 import '../controller/task_manage_provider.dart';
+import 'dashboard_design.dart';
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key});
@@ -107,6 +108,7 @@ class MyHomePage extends StatelessWidget {
             progress: 0.7,
             progressBarColor: purpleColor,
             iconcolor: Colors.grey,
+            onTap: () {},
           ),
           SizedBox(
             height: 5,
@@ -116,6 +118,12 @@ class MyHomePage extends StatelessWidget {
             progress: 1,
             progressBarColor: greenColor,
             iconcolor: Colors.green,
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => DashBoardDesign()),
+              );
+            },
           ),
           SizedBox(
             height: 5,
@@ -125,6 +133,7 @@ class MyHomePage extends StatelessWidget {
             progress: 0.4,
             progressBarColor: orangeColor,
             iconcolor: Colors.grey,
+            onTap: () {},
           ),
           SizedBox(
             height: 5,
@@ -134,6 +143,7 @@ class MyHomePage extends StatelessWidget {
             progress: 0.2,
             progressBarColor: redColor,
             iconcolor: Colors.grey,
+            onTap: () {},
           ),
         ]),
       ),
