@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:provider/provider.dart';
 import 'package:task_management_app_thiran_tech/controller/parameters.dart';
@@ -20,14 +21,14 @@ class DashBoardDesign extends StatelessWidget {
         elevation: 0,
         leading: IconButton(
             onPressed: () {},
-            icon: Icon(
+            icon:const Icon(
               Icons.arrow_back_ios_new,
               color: Colors.black87,
             )),
         actions: [
           IconButton(
               onPressed: () {},
-              icon: Icon(
+              icon:const Icon(
                 Icons.more_vert_rounded,
                 color: Colors.black87,
               )),
@@ -36,18 +37,18 @@ class DashBoardDesign extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.only(left: 15, right: 15),
         child: ListView(children: [
-          Text(
+        const  Text(
             "Dashboard Design",
             style: titleText,
-          ),
-          SizedBox(
+          ).animate().slideX(curve: Curves.easeIn, delay: 1000.ms),
+        const  SizedBox(
             height: 15,
           ),
           Text(
             "Today, Shared by - Unbox Degital",
             style: secondaryText,
-          ),
-          SizedBox(
+          ).animate().slideX(curve: Curves.easeIn, delay: 1000.ms),
+        const  SizedBox(
             height: 20,
           ),
           Container(
@@ -66,7 +67,7 @@ class DashBoardDesign extends StatelessWidget {
                     progressColor: greenColor,
                     backgroundColor: greenColor.withOpacity(0.08),
                     circularStrokeCap: CircularStrokeCap.round,
-                    center: Text(
+                    center:const Text(
                       "85%",
                       style: TextStyle(
                           fontSize: 22,
@@ -78,11 +79,11 @@ class DashBoardDesign extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SizedBox(
+                const    SizedBox(
                       height: 10,
                     ),
-                    Text("Team", style: titleTextSmall),
-                    SizedBox(
+                const    Text("Team", style: titleTextSmall),
+                 const   SizedBox(
                       height: 10,
                     ),
                     Row(
@@ -101,7 +102,7 @@ class DashBoardDesign extends StatelessWidget {
                           } else {
                             return Transform.translate(
                               offset: Offset(-8.0 * index, -0.0 * index),
-                              child: CircleAvatar(
+                              child:const CircleAvatar(
                                 backgroundColor: Colors.amber,
                                 radius: 15,
                                 child: Icon(
@@ -115,11 +116,11 @@ class DashBoardDesign extends StatelessWidget {
                         },
                       ).toList(),
                     ),
-                    SizedBox(
+                 const   SizedBox(
                       height: 10,
                     ),
-                    Text("Deadline", style: titleTextSmall),
-                    SizedBox(
+              const      Text("Deadline", style: titleTextSmall),
+              const      SizedBox(
                       height: 10,
                     ),
                     Row(
@@ -129,7 +130,7 @@ class DashBoardDesign extends StatelessWidget {
                           color: Colors.grey.withOpacity(0.8),
                           size: 18,
                         ),
-                        SizedBox(
+                const        SizedBox(
                           width: 5,
                         ),
                         Text(
@@ -142,15 +143,15 @@ class DashBoardDesign extends StatelessWidget {
                 )
               ],
             ),
-          ),
-          SizedBox(
+          ).animate().slideX(curve: Curves.easeIn, delay: 1000.ms),
+        const  SizedBox(
             height: 45,
           ),
-          Text(
+      const    Text(
             "Project Progress",
             style: titleText,
-          ),
-          SizedBox(
+          ).animate().slideX(curve: Curves.easeIn, delay: 1000.ms),
+    const      SizedBox(
             height: 15,
           ),
           Container(
@@ -227,17 +228,17 @@ class DashBoardDesign extends StatelessWidget {
                 ),
               ],
             ),
-          ),
-          SizedBox(
+          ).animate().slideX(curve: Curves.easeIn, delay: 1000.ms),
+   const       SizedBox(
             height: 45,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
+      const        Text(
                 "Project Overview",
                 style: titleText,
-              ),
+              ).animate().slideX(curve: Curves.easeIn, delay: 1000.ms),
               Container(
                 width: 65,
                 height: 22,
@@ -253,7 +254,7 @@ class DashBoardDesign extends StatelessWidget {
                           fontSize: 12,
                           fontWeight: FontWeight.bold),
                     ),
-                    Icon(
+              const      Icon(
                       Icons.arrow_drop_down,
                       color: Colors.grey,
                     ),
@@ -262,7 +263,7 @@ class DashBoardDesign extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(
+   const       SizedBox(
             height: 20,
           ),
           Padding(
@@ -280,21 +281,21 @@ class DashBoardDesign extends StatelessWidget {
                             "10 ",
                             style: secondaryText,
                           ),
-                          SizedBox(
+           const               SizedBox(
                             height: 20,
                           ),
                           Text(
                             "5 ",
                             style: secondaryText,
                           ),
-                          SizedBox(
+           const               SizedBox(
                             height: 20,
                           ),
                           Text(
                             "2 ",
                             style: secondaryText,
                           ),
-                          SizedBox(
+             const             SizedBox(
                             height: 20,
                           ),
                           Text(
@@ -303,57 +304,60 @@ class DashBoardDesign extends StatelessWidget {
                           ),
                         ],
                       ),
-                      Container(
+                 const     SizedBox(
                         height: 150,
                         child: MyCurvedChart(),
                       ),
                     ],
                   ),
+              const    SizedBox(
+                    height: 15,
+                  ),
                   Row(
                     children: [
-                      SizedBox(
+               const       SizedBox(
                         width: 15,
                       ),
                       Text(
                         "Sun",
                         style: secondaryText,
                       ),
-                      SizedBox(
+             const         SizedBox(
                         width: 30,
                       ),
                       Text(
                         "Mon",
                         style: secondaryText,
                       ),
-                      SizedBox(
+           const           SizedBox(
                         width: 30,
                       ),
                       Text(
                         "Tue",
                         style: secondaryText,
                       ),
-                      SizedBox(
+             const         SizedBox(
                         width: 30,
                       ),
                       Text(
                         "Wed",
                         style: secondaryText,
                       ),
-                      SizedBox(
+            const          SizedBox(
                         width: 30,
                       ),
                       Text(
                         "Thu",
                         style: secondaryText,
                       ),
-                      SizedBox(
+              const        SizedBox(
                         width: 30,
                       ),
                       Text(
                         "Fri",
                         style: secondaryText,
                       ),
-                      SizedBox(
+          const            SizedBox(
                         width: 30,
                       ),
                       Text(
@@ -365,7 +369,7 @@ class DashBoardDesign extends StatelessWidget {
                 ],
               ),
             ),
-          ),
+          ).animate().slideY(curve: Curves.easeIn, delay: 1000.ms),
         ]),
       ),
     );

@@ -30,13 +30,13 @@ class MyApp extends StatelessWidget {
               floatingActionButton: FloatingActionButton(
                 backgroundColor: purpleColor,
                 onPressed: () {},
-                child: Icon(
+                child: const Icon(
                   Icons.add,
                 ),
               ),
               bottomNavigationBar: BottomAppBar(
                 height: 60,
-                shape: CircularNotchedRectangle(),
+                shape: const CircularNotchedRectangle(),
                 child: Padding(
                   padding: const EdgeInsets.only(bottom: 25, top: 10),
                   child: Row(
@@ -64,7 +64,7 @@ class MyApp extends StatelessWidget {
                           provider.onItemTapped(1);
                         },
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 25,
                       ),
                       IconButton(

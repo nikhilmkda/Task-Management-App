@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:task_management_app_thiran_tech/controller/parameters.dart';
 import 'package:task_management_app_thiran_tech/view/all_project_tile.dart';
-import 'package:task_management_app_thiran_tech/view/homepage.dart';
 
-import '../main.dart';
 import 'dashboard_design.dart';
 
 class AllProjects extends StatelessWidget {
@@ -24,7 +23,7 @@ class AllProjects extends StatelessWidget {
           percentageColor: purpleColor,
           onTap: () {},
         ),
-        SizedBox(
+       const SizedBox(
           height: 22,
         ),
         AllProjectTile(
@@ -36,12 +35,13 @@ class AllProjects extends StatelessWidget {
           percentageColor: greenColor,
           onTap: () {
             Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => DashBoardDesign()),
-            );
+                context,
+                PageTransition(
+                    type: PageTransitionType.leftToRight,
+                    child: const DashBoardDesign()));
           },
         ),
-        SizedBox(
+     const   SizedBox(
           height: 22,
         ),
         AllProjectTile(
@@ -53,7 +53,7 @@ class AllProjects extends StatelessWidget {
           percentageColor: orangeColor,
           onTap: () {},
         ),
-        SizedBox(
+    const    SizedBox(
           height: 22,
         ),
         AllProjectTile(

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_toggle_tab/flutter_toggle_tab.dart';
 import 'package:task_management_app_thiran_tech/controller/parameters.dart';
 import 'package:task_management_app_thiran_tech/view/all_project.dart';
-import 'package:task_management_app_thiran_tech/view/homepage.dart';
 
 class ProjectPage extends StatefulWidget {
   const ProjectPage({super.key});
@@ -14,7 +13,7 @@ class ProjectPage extends StatefulWidget {
 class _ProjectPageState extends State<ProjectPage> {
   var tabTextIndexSelected = 1;
   final listTextTabToggle = ["All", "Ongoing", "Completed"];
-  final List<Widget> pages = [AllProjects()];
+  final List<Widget> pages = [const AllProjects()];
 
   @override
   Widget build(BuildContext context) {
@@ -24,16 +23,16 @@ class _ProjectPageState extends State<ProjectPage> {
         padding: const EdgeInsets.only(left: 10, right: 10),
         child: Column(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 50,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                CircleAvatar(
+              const  CircleAvatar(
                     backgroundImage: AssetImage("assets/people/image1.jpg")),
                 IconButton(
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.search_rounded,
                     size: 35,
                   ),
@@ -41,10 +40,10 @@ class _ProjectPageState extends State<ProjectPage> {
                 ),
               ],
             ),
-            SizedBox(
+         const   SizedBox(
               height: 15,
             ),
-            Row(
+        const    Row(
               children: [
                 Text(
                   "Project",
@@ -52,17 +51,17 @@ class _ProjectPageState extends State<ProjectPage> {
                 ),
               ],
             ),
-            SizedBox(
+        const    SizedBox(
               height: 15,
             ),
-            Container(
+            SizedBox(
               height: 40,
               width: MediaQuery.of(context).size.width,
               child: FlutterToggleTab(
                 borderRadius: 25,
                 height: 50,
                 selectedIndex: tabTextIndexSelected,
-                unSelectedBackgroundColors: [
+                unSelectedBackgroundColors: const [
                   Colors.white,
                   Colors.white,
                 ],
@@ -82,7 +81,7 @@ class _ProjectPageState extends State<ProjectPage> {
                 isScroll: false,
               ),
             ),
-            SizedBox(
+        const    SizedBox(
               height: 15, // Adjust this height as needed
             ),
             Expanded(

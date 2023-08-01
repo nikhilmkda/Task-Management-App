@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_animate/flutter_animate.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:task_management_app_thiran_tech/controller/parameters.dart';
 import 'package:task_management_app_thiran_tech/view/custom_container.dart';
 import 'package:task_management_app_thiran_tech/view/daily_task_custom_widget.dart';
 
-import '../controller/task_manage_provider.dart';
 import 'dashboard_design.dart';
 
 class MyHomePage extends StatelessWidget {
@@ -17,18 +17,18 @@ class MyHomePage extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.only(left: 10, right: 10),
         child: ListView(children: [
-          SizedBox(
+         const SizedBox(
             height: 15,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              CircleAvatar(
+           const   CircleAvatar(
                   backgroundImage: AssetImage("assets/people/image1.jpg")
                   // You can use AssetImage('path_to_local_image') for local images.
                   ),
               IconButton(
-                icon: Icon(
+                icon:const Icon(
                   Icons.search_rounded,
                   size: 35,
                 ),
@@ -36,22 +36,24 @@ class MyHomePage extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(
+        const  SizedBox(
             height: 15,
           ),
           const Text(
             'Hello',
             style: TextStyle(
                 color: Colors.grey, fontSize: 18, fontWeight: FontWeight.bold),
-          ),
-          SizedBox(
+          ).animate().fade(delay: 300.ms),
+       const   SizedBox(
             height: 15,
           ),
-          const Text('Alex Marconi', style: headLineText),
-          SizedBox(
+          const Text('Alex Marconi', style: headLineText)
+              .animate()
+              .slideX(curve: Curves.easeIn, delay: 1000.ms),
+      const    SizedBox(
             height: 15,
           ),
-          Column(
+          const Column(
             children: [
               Row(
                 children: [
@@ -79,13 +81,13 @@ class MyHomePage extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(
+        const  SizedBox(
             height: 15,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
+        const      Text(
                 "Daily Task",
                 style: titleText,
               ),
@@ -95,7 +97,7 @@ class MyHomePage extends StatelessWidget {
                     "All Task",
                     style: secondaryText,
                   ),
-                  Icon(
+              const    Icon(
                     Icons.arrow_drop_down_outlined,
                     color: Colors.grey,
                   )
@@ -110,7 +112,7 @@ class MyHomePage extends StatelessWidget {
             iconcolor: Colors.grey,
             onTap: () {},
           ),
-          SizedBox(
+      const    SizedBox(
             height: 5,
           ),
           Daily_task_custom_widget(
@@ -120,12 +122,13 @@ class MyHomePage extends StatelessWidget {
             iconcolor: Colors.green,
             onTap: () {
               Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => DashBoardDesign()),
-              );
+                  context,
+                  PageTransition(
+                      type: PageTransitionType.rightToLeft,
+                      child: const DashBoardDesign()));
             },
           ),
-          SizedBox(
+      const    SizedBox(
             height: 5,
           ),
           Daily_task_custom_widget(
@@ -135,7 +138,7 @@ class MyHomePage extends StatelessWidget {
             iconcolor: Colors.grey,
             onTap: () {},
           ),
-          SizedBox(
+      const    SizedBox(
             height: 5,
           ),
           Daily_task_custom_widget(
