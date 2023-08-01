@@ -20,14 +20,18 @@ Open the project in your favorite IDE (e.g., Android Studio, Visual Studio Code)
 Run flutter pub get in the terminal to fetch the required dependencies.
 Connect your device or start an emulator.
 Run flutter run to launch the app on your device/emulator.
+
 #Dependencies
+
 The app uses the following dependencies:
 
 flutter_animate: Provides animation capabilities for UI elements.
 percent_indicator: Displays circular percent indicators to show task progress.
 provider: Implements the provider design pattern for state management.
 #Directory Structure
+
 The project follows the standard Flutter directory structure:
+
 
 
 task_management_app/
@@ -60,5 +64,7 @@ task_management_app/
 |-- test/
 |-- pubspec.yaml
 |-- README.md
+
 #Contributing
+
 Contributions to the Task Management App are welcome! If you find a bug or have an enhancement idea, please submit an issue. Pull requests with bug fixes or new features are also encouraged.
