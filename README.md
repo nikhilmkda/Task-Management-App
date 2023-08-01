@@ -28,6 +28,7 @@ The app uses the following dependencies:
 flutter_animate: Provides animation capabilities for UI elements.
 percent_indicator: Displays circular percent indicators to show task progress.
 provider: Implements the provider design pattern for state management.
+
 #Directory Structure
 
 The project follows the standard Flutter directory structure:
