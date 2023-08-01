@@ -7,16 +7,16 @@ import 'dashboard_design.dart';
 
 class AllProjects extends StatelessWidget {
   const AllProjects({
-    super.key,
-  });
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-
-    // projects are made in to a custom widget with parameters and calling in this page 
+    // The list of projects is displayed as a ListView of custom AllProjectTile widgets.
     return ListView(
       children: [
         AllProjectTile(
+          // First project tile.
           title: "App Animation",
           date: "Today, Shared by - Unbox Digital",
           percentageNum: 0.65,
@@ -25,10 +25,11 @@ class AllProjects extends StatelessWidget {
           percentageColor: purpleColor,
           onTap: () {},
         ),
-       const SizedBox(
+        const SizedBox(
           height: 22,
         ),
         AllProjectTile(
+          // Second project tile.
           title: "Dashboard Design",
           date: "Today, Shared by - Ui Been",
           percentageNum: 0.85,
@@ -36,17 +37,21 @@ class AllProjects extends StatelessWidget {
           secondDate: 'July 25, 2021 - July 30, 2021',
           percentageColor: greenColor,
           onTap: () {
+            // When the second project tile is tapped, navigate to the DashBoardDesign page using page transition animation.
             Navigator.push(
-                context,
-                PageTransition(
-                    type: PageTransitionType.leftToRight,
-                    child: const DashBoardDesign()));
+              context,
+              PageTransition(
+                type: PageTransitionType.leftToRight,
+                child: const DashBoardDesign(),
+              ),
+            );
           },
         ),
-     const   SizedBox(
+        const SizedBox(
           height: 22,
         ),
         AllProjectTile(
+          // Third project tile.
           title: "UI/UX Design",
           date: "Today, Shared by - Unbox",
           percentageNum: 0.30,
@@ -55,10 +60,11 @@ class AllProjects extends StatelessWidget {
           percentageColor: orangeColor,
           onTap: () {},
         ),
-    const    SizedBox(
+        const SizedBox(
           height: 22,
         ),
         AllProjectTile(
+          // Fourth project tile.
           title: "App Animation",
           date: "Today, Shared by - Unbox Digital",
           percentageNum: 0.65,

@@ -6,14 +6,17 @@ class CustomContainerSquareBox extends StatelessWidget {
   final String text;
   final Color containerColor;
 
-  const CustomContainerSquareBox(
-      {super.key,
-      required this.icon,
-      required this.text,
-      required this.containerColor});
+  // Constructor to initialize the properties
+  const CustomContainerSquareBox({
+    super.key,
+    required this.icon,
+    required this.text,
+    required this.containerColor,
+  });
 
   @override
   Widget build(BuildContext context) {
+    // Return a container representing the custom square box.
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
@@ -27,23 +30,28 @@ class CustomContainerSquareBox extends StatelessWidget {
               color: Colors.black.withOpacity(0.1),
               spreadRadius: 2,
               blurRadius: 4,
-              offset:const Offset(0, 2),
+              offset: const Offset(0, 2),
             ),
           ],
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            // Icon inside the square box.
             Icon(icon, size: 20, color: Colors.white),
-           const SizedBox(height: 8),
+
+            // Spacing between icon and text.
+            const SizedBox(height: 8),
+
+            // Text label inside the square box.
             Text(
               text,
-              style:const TextStyle(
+              style: const TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
                 color: Colors.white,
               ),
-            ).animate().slideX(curve: Curves.easeInOut).shake(delay: 1000.ms)
+            ).animate().slideX(curve: Curves.easeInOut).shake(delay: 1000.ms),
           ],
         ),
       ),

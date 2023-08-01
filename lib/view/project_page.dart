@@ -4,16 +4,22 @@ import 'package:task_management_app_thiran_tech/controller/parameters.dart';
 import 'package:task_management_app_thiran_tech/view/all_project.dart';
 
 class ProjectPage extends StatefulWidget {
-  const ProjectPage({super.key});
+  const ProjectPage({Key? key}) : super(key: key);
 
   @override
   State<ProjectPage> createState() => _ProjectPageState();
 }
-//implemented only toggle tab buttons and their screens here.
+
+/// The state for the [ProjectPage] widget.
+/// This class handles the logic and state management for the ProjectPage.
 class _ProjectPageState extends State<ProjectPage> {
-  var tabTextIndexSelected = 1;
+  // Track the index of the currently selected tab.
+  var tabTextIndexSelected = 0; // Default selected index is 0 (All Projects).
+
+  // List of labels for the toggle tabs.
   final listTextTabToggle = ["All", "Ongoing", "Completed"];
-  //the required screens to be displayed are calling in to a list and the  list index in used to display the screen
+  
+  // List of pages to be displayed in each tab.
   final List<Widget> pages = [const AllProjects()];  
 
   @override
@@ -30,21 +36,26 @@ class _ProjectPageState extends State<ProjectPage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-              const  CircleAvatar(
-                    backgroundImage: AssetImage("assets/people/image1.jpg")),
+                // Display the user's profile image as a CircleAvatar.
+                const CircleAvatar(
+                  backgroundImage: AssetImage("assets/people/image1.jpg"),
+                ),
                 IconButton(
                   icon: const Icon(
                     Icons.search_rounded,
                     size: 35,
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    // TODO: Implement the search functionality when the search icon is pressed.
+                  },
                 ),
               ],
             ),
-         const   SizedBox(
+            const SizedBox(
               height: 15,
             ),
-        const    Row(
+            // Display the section title for the projects.
+            const Row(
               children: [
                 Text(
                   "Project",
@@ -52,9 +63,10 @@ class _ProjectPageState extends State<ProjectPage> {
                 ),
               ],
             ),
-        const    SizedBox(
+            const SizedBox(
               height: 15,
             ),
+            // Create a toggle tab bar to switch between different project lists.
             SizedBox(
               height: 40,
               width: MediaQuery.of(context).size.width,
@@ -75,6 +87,7 @@ class _ProjectPageState extends State<ProjectPage> {
                 unSelectedTextStyle: titleTextSmall,
                 labels: listTextTabToggle,
                 selectedLabelIndex: (index) {
+                  // Update the selected index when a tab is tapped.
                   setState(() {
                     tabTextIndexSelected = index;
                   });
@@ -82,11 +95,12 @@ class _ProjectPageState extends State<ProjectPage> {
                 isScroll: false,
               ),
             ),
-        const    SizedBox(
+            const SizedBox(
               height: 15,
             ),
+            // Display the content of the selected page based on the selected tab index.
             Expanded(
-              child: pages[0], // Initially show the first page
+              child: pages[tabTextIndexSelected],
             ),
           ],
         ),

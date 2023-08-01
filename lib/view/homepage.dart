@@ -12,6 +12,9 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+     // TODO: Implement the UI for the project page.
+    // This method should return a widget that represents the project page content.
+   
     return Scaffold(
       backgroundColor: backgroundColor,
       body: Padding(
@@ -25,7 +28,7 @@ class MyHomePage extends StatelessWidget {
             children: [
            const   CircleAvatar(
                   backgroundImage: AssetImage("assets/people/image1.jpg")
-                  // You can use AssetImage('path_to_local_image') for local images.
+                  
                   ),
               IconButton(
                 icon:const Icon(
@@ -54,10 +57,11 @@ class MyHomePage extends StatelessWidget {
             height: 15,
           ),
 
-          // using  custom container with parameters to display colored square box
+          
           const Column(
             children: [
               Row(
+                // using  custom container with parameters to display colored square box
                 children: [
                   CustomContainerSquareBox(
                       icon: Icons.update_rounded,
