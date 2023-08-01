@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:task_management_app_thiran_tech/controller/parameters.dart';
-import 'package:task_management_app_thiran_tech/view/custom_container.dart';
-import 'package:task_management_app_thiran_tech/view/daily_task_custom_widget.dart';
+import 'package:task_management_app_thiran_tech/model/custom_container.dart';
+import 'package:task_management_app_thiran_tech/model/daily_task_custom_widget.dart';
 
 import 'dashboard_design.dart';
 
