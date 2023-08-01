@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../view/homepage.dart';
-import '../view/project_page.dart';
+
 
 class TaskManageProvider extends ChangeNotifier {
   int _selectedIndex = 0;
