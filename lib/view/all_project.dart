@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:task_management_app_thiran_tech/controller/parameters.dart';
-import 'package:task_management_app_thiran_tech/model/all_project_tile.dart';
+import 'package:task_management_app_thiran_tech/view/widgets/all_project_tile.dart';
 
 import 'dashboard_design.dart';
 

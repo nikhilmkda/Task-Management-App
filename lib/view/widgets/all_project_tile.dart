@@ -4,7 +4,7 @@ import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:provider/provider.dart';
 import 'package:task_management_app_thiran_tech/controller/parameters.dart';
 
-import '../controller/task_manage_provider.dart';
+import '../../controller/task_manage_provider.dart';
 
 class AllProjectTile extends StatelessWidget {
   // Properties of the AllProjectTile

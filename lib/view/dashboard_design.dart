@@ -3,7 +3,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:provider/provider.dart';
 import 'package:task_management_app_thiran_tech/controller/parameters.dart';
-import 'package:task_management_app_thiran_tech/model/custom_checkbox.dart';
+import 'package:task_management_app_thiran_tech/view/widgets/custom_checkbox.dart';
 import 'package:task_management_app_thiran_tech/model/fl_chart.dart';
 
 import '../controller/task_manage_provider.dart';
