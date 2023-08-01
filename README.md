@@ -14,7 +14,7 @@ Customization: Users can customize the app by choosing project colors and other 
 
 #Getting Started
 
-Clone the repository from GitHub: https://github.com/your-username/task_management_app.git
+Clone the repository from GitHub: https://github.com/nikhilmkda/Task-Management_app.git
 Make sure you have Flutter installed on your machine. If not, follow the Flutter installation guide: https://flutter.dev/docs/get-started/install
 Open the project in your favorite IDE (e.g., Android Studio, Visual Studio Code).
 Run flutter pub get in the terminal to fetch the required dependencies.
