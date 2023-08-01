@@ -53,6 +53,8 @@ class MyHomePage extends StatelessWidget {
       const    SizedBox(
             height: 15,
           ),
+
+          // using  custom container with parameters to display colored square box
           const Column(
             children: [
               Row(
@@ -105,6 +107,7 @@ class MyHomePage extends StatelessWidget {
               )
             ],
           ),
+           //daily task values are passed to a custom widget with parameters in order simplify the code
           Daily_task_custom_widget(
             text: "App Animation",
             progress: 0.7,

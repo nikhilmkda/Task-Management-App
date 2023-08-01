@@ -5,20 +5,15 @@ import '../view/project_page.dart';
 
 class TaskManageProvider extends ChangeNotifier {
   int _selectedIndex = 0;
-  int get selectedIndex => _selectedIndex;
-  bool _isChecked = false;
-  bool get isChecked => _isChecked;
-  
-  void setChecked(bool newValue) {
-    _isChecked = newValue;
-    notifyListeners();
-  }
+  int get selectedIndex =>
+      _selectedIndex; //index using to select page change in bottom navigation bar
 
   void onItemTapped(int index) {
     _selectedIndex = index;
     notifyListeners();
   }
 
+//image list of project members
   final List<String> imagePaths = [
     "assets/people/image1.jpg",
     "assets/people/image2.jpeg",
@@ -26,17 +21,4 @@ class TaskManageProvider extends ChangeNotifier {
     "assets/people/image4.jpg",
     "assets/people/image5.jpeg",
   ];
-
-  buildPage(int selectedIndex) {
-    notifyListeners();
-    switch (selectedIndex) {
-      case 0:
-        return MyHomePage();
-      case 1:
-        return ProjectPage();
-
-      default:
-        return MyHomePage();
-    }
-  }
 }

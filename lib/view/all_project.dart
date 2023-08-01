@@ -12,6 +12,8 @@ class AllProjects extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    // projects are made in to a custom widget with parameters and calling in this page 
     return ListView(
       children: [
         AllProjectTile(

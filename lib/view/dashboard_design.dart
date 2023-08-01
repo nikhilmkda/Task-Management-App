@@ -306,7 +306,7 @@ class DashBoardDesign extends StatelessWidget {
                       ),
                  const     SizedBox(
                         height: 150,
-                        child: MyCurvedChart(),
+                        child: MyCurvedChart(), //  chart page called here
                       ),
                     ],
                   ),

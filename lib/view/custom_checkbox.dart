@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+// checkbox that using in dashboard design page 
 class CustomCheckbox extends StatelessWidget {
   final Color containerColor;
   final Color iconColor;

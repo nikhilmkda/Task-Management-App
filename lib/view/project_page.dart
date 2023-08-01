@@ -9,11 +9,12 @@ class ProjectPage extends StatefulWidget {
   @override
   State<ProjectPage> createState() => _ProjectPageState();
 }
-
+//implemented only toggle tab buttons and their screens here.
 class _ProjectPageState extends State<ProjectPage> {
   var tabTextIndexSelected = 1;
   final listTextTabToggle = ["All", "Ongoing", "Completed"];
-  final List<Widget> pages = [const AllProjects()];
+  //the required screens to be displayed are calling in to a list and the  list index in used to display the screen
+  final List<Widget> pages = [const AllProjects()];  
 
   @override
   Widget build(BuildContext context) {
@@ -67,7 +68,7 @@ class _ProjectPageState extends State<ProjectPage> {
                 ],
                 selectedBackgroundColors: const [purpleColor],
                 selectedTextStyle: const TextStyle(
-                  color: Colors.white, // Set the selected text color to white
+                  color: Colors.white, 
                   fontSize: 13,
                   fontWeight: FontWeight.w700,
                 ),
@@ -82,7 +83,7 @@ class _ProjectPageState extends State<ProjectPage> {
               ),
             ),
         const    SizedBox(
-              height: 15, // Adjust this height as needed
+              height: 15,
             ),
             Expanded(
               child: pages[0], // Initially show the first page
