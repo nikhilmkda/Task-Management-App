@@ -40,7 +40,7 @@ class AllProjectTile extends StatelessWidget {
         padding: const EdgeInsets.only(right: 0, left: 0),
         child: Container(
           decoration: BoxDecoration(
-            color: const Color.fromARGB(255, 255, 251, 251),
+            color: Colors.white,
             borderRadius: BorderRadius.circular(10.0),
           ),
           height: 170,
@@ -57,7 +57,10 @@ class AllProjectTile extends StatelessWidget {
                     Text(
                       title,
                       style: titleTextSmall,
-                    ).animate().fade(delay: 500.ms).slideX(curve: Curves.easeIn, delay: 1000.ms),
+                    )
+                        .animate()
+                        .fade(delay: 500.ms)
+                        .slideX(curve: Curves.easeIn, delay: 1000.ms),
 
                     const SizedBox(
                       height: 12,
@@ -88,7 +91,8 @@ class AllProjectTile extends StatelessWidget {
                             return Transform.translate(
                               offset: Offset(-8.0 * index, -0.0 * index),
                               child: CircleAvatar(
-                                backgroundImage: AssetImage(taskManageProvider.imagePaths[index]),
+                                backgroundImage: AssetImage(
+                                    taskManageProvider.imagePaths[index]),
                                 radius: 14,
                               ),
                             );
@@ -136,10 +140,10 @@ class AllProjectTile extends StatelessWidget {
 
                 // CircularPercentIndicator to show the project progress percentage
                 Padding(
-                  padding: const EdgeInsets.only(bottom: 10),
+                  padding: const EdgeInsets.only(bottom: 10, right: 15),
                   child: CircularPercentIndicator(
-                    radius: 45,
-                    lineWidth: 9,
+                    radius: 42,
+                    lineWidth: 8,
                     percent: percentageNum,
                     progressColor: percentageColor,
                     backgroundColor: percentageColor.withOpacity(0.08),
@@ -152,7 +156,11 @@ class AllProjectTile extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                  ).animate().fade().then().slide(duration: 2000.ms, curve: Curves.bounceInOut),
+                  )
+                      .animate()
+                      .fade()
+                      .then()
+                      .slide(duration: 2000.ms, curve: Curves.bounceInOut),
                 ),
               ],
             ),

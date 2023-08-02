@@ -18,16 +18,20 @@ class _ProjectPageState extends State<ProjectPage> {
 
   // List of labels for the toggle tabs.
   final listTextTabToggle = ["All", "Ongoing", "Completed"];
-  
+
   // List of pages to be displayed in each tab.
-  final List<Widget> pages = [const AllProjects()];  
+  final List<Widget> pages = [
+    const AllProjects(),
+    const AllProjects(),
+    const AllProjects(),
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: backgroundColor,
       body: Padding(
-        padding: const EdgeInsets.only(left: 10, right: 10),
+        padding: const EdgeInsets.only(left: 14, right: 10),
         child: Column(
           children: [
             const SizedBox(
@@ -64,15 +68,17 @@ class _ProjectPageState extends State<ProjectPage> {
               ],
             ),
             const SizedBox(
-              height: 15,
+              height: 30,
             ),
             // Create a toggle tab bar to switch between different project lists.
             SizedBox(
               height: 40,
               width: MediaQuery.of(context).size.width,
               child: FlutterToggleTab(
+                isShadowEnable: false,
                 borderRadius: 25,
                 height: 50,
+                width: 94,
                 selectedIndex: tabTextIndexSelected,
                 unSelectedBackgroundColors: const [
                   Colors.white,
@@ -80,7 +86,7 @@ class _ProjectPageState extends State<ProjectPage> {
                 ],
                 selectedBackgroundColors: const [purpleColor],
                 selectedTextStyle: const TextStyle(
-                  color: Colors.white, 
+                  color: Colors.white,
                   fontSize: 13,
                   fontWeight: FontWeight.w700,
                 ),
