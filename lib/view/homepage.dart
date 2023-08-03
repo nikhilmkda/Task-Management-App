@@ -12,57 +12,68 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-     // TODO: Implement the UI for the project page.
+    // TODO: Implement the UI for the project page.
     // This method should return a widget that represents the project page content.
-   
+
     return Scaffold(
       backgroundColor: backgroundColor,
       body: Padding(
-        padding: const EdgeInsets.only(left: 10, right: 10),
-        child: ListView(children: [
-         const SizedBox(
-            height: 15,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-           const   CircleAvatar(
-                  backgroundImage: AssetImage("assets/people/image1.jpg")
-                  
+        padding: const EdgeInsets.only(left: 15, right: 15),
+        child: SingleChildScrollView(
+          child: Column(children: [
+            const SizedBox(
+              height: 15,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const CircleAvatar(
+                    backgroundImage: AssetImage("assets/people/image1.jpg")),
+                IconButton(
+                  icon: const Icon(
+                    Icons.search_rounded,
+                    size: 35,
                   ),
-              IconButton(
-                icon:const Icon(
-                  Icons.search_rounded,
-                  size: 35,
+                  onPressed: () {},
                 ),
-                onPressed: () {},
-              ),
-            ],
-          ),
-        const  SizedBox(
-            height: 15,
-          ),
-          const Text(
-            'Hello',
-            style: TextStyle(
-                color: Colors.grey, fontSize: 18, fontWeight: FontWeight.bold),
-          ).animate().fade(delay: 300.ms),
-       const   SizedBox(
-            height: 15,
-          ),
-          const Text('Alex Marconi', style: headLineText)
-              .animate()
-              .slideX(curve: Curves.easeIn, delay: 1000.ms),
-      const    SizedBox(
-            height: 15,
-          ),
+              ],
+            ),
+            const SizedBox(
+              height: 15,
+            ),
+            Row(
+              children: [
+                const Text(
+                  'Hello',
+                  style: TextStyle(
+                      color: Colors.grey,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold),
+                ).animate().fade(delay: 300.ms),
+              ],
+            ),
+            const SizedBox(
+              height: 15,
+            ),
+            Row(
+              children: [
+                const Text('Alex Marconi', style: headLineText)
+                    .animate()
+                    .slideX(curve: Curves.easeIn, delay: 1000.ms),
+              ],
+            ),
 
-          
-          const Column(
-            children: [
-              Row(
-                // using  custom container with parameters to display colored square box
-                children: [
+            SizedBox(
+              height: 300,
+              child: GridView.count(
+                primary: false,
+                physics: const NeverScrollableScrollPhysics(
+                    parent: NeverScrollableScrollPhysics()),
+                childAspectRatio: 1.6,
+                crossAxisSpacing: 15,
+                mainAxisSpacing: 15,
+                crossAxisCount: 2,
+                children: const <Widget>[
                   CustomContainerSquareBox(
                       icon: Icons.update_rounded,
                       text: "In Progress",
@@ -71,91 +82,101 @@ class MyHomePage extends StatelessWidget {
                       icon: Icons.cached_outlined,
                       text: "Ongoing",
                       containerColor: purpleColor),
-                ],
-              ),
-              Row(
-                children: [
                   CustomContainerSquareBox(
-                      icon: Icons.file_copy_outlined,
-                      text: "completed",
+                      icon: Icons.assignment_turned_in,
+                      text: "Completed",
                       containerColor: greenColor),
                   CustomContainerSquareBox(
-                      icon: Icons.cancel_sharp,
+                      icon: Icons.description_outlined,
                       text: "Cancel",
                       containerColor: redColor),
                 ],
               ),
-            ],
-          ),
-        const  SizedBox(
-            height: 15,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-        const      Text(
-                "Daily Task",
-                style: titleText,
+            ),
+
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Text(
+                  "Daily Task",
+                  style: titleText,
+                ),
+                Row(
+                  children: [
+                    Text(
+                      "All Task",
+                      style: secondaryText,
+                    ),
+                    const Icon(
+                      Icons.arrow_drop_down_outlined,
+                      color: Colors.grey,
+                    )
+                  ],
+                )
+              ],
+            ),
+            //daily task values are passed to a custom widget with parameters in order simplify the code
+            SizedBox(
+              height: 80,
+              width: double.infinity,
+              child: Daily_task_custom_widget(
+                text: "App Animation",
+                progress: 0.7,
+                progressBarColor: purpleColor,
+                iconcolor: Colors.grey,
+                onTap: () {},
               ),
-              Row(
-                children: [
-                  Text(
-                    "All Task",
-                    style: secondaryText,
-                  ),
-              const    Icon(
-                    Icons.arrow_drop_down_outlined,
-                    color: Colors.grey,
-                  )
-                ],
-              )
-            ],
-          ),
-           //daily task values are passed to a custom widget with parameters in order simplify the code
-          Daily_task_custom_widget(
-            text: "App Animation",
-            progress: 0.7,
-            progressBarColor: purpleColor,
-            iconcolor: Colors.grey,
-            onTap: () {},
-          ),
-      const    SizedBox(
-            height: 5,
-          ),
-          Daily_task_custom_widget(
-            text: "Dashboard Design",
-            progress: 1,
-            progressBarColor: greenColor,
-            iconcolor: Colors.green,
-            onTap: () {
-              Navigator.push(
-                  context,
-                  PageTransition(
-                      type: PageTransitionType.rightToLeft,
-                      child: const DashBoardDesign()));
-            },
-          ),
-      const    SizedBox(
-            height: 5,
-          ),
-          Daily_task_custom_widget(
-            text: "UI/UX Design",
-            progress: 0.4,
-            progressBarColor: orangeColor,
-            iconcolor: Colors.grey,
-            onTap: () {},
-          ),
-      const    SizedBox(
-            height: 5,
-          ),
-          Daily_task_custom_widget(
-            text: "Interaction Design",
-            progress: 0.2,
-            progressBarColor: redColor,
-            iconcolor: Colors.grey,
-            onTap: () {},
-          ),
-        ]),
+            ),
+            const SizedBox(
+              height: 5,
+            ),
+            SizedBox(
+              height: 80,
+              width: double.infinity,
+              child: Daily_task_custom_widget(
+                text: "Dashboard Design",
+                progress: 1,
+                progressBarColor: greenColor,
+                iconcolor: Colors.green,
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      PageTransition(
+                          type: PageTransitionType.rightToLeft,
+                          child: const DashBoardDesign()));
+                },
+              ),
+            ),
+            const SizedBox(
+              height: 5,
+            ),
+            SizedBox(
+              height: 80,
+              width: double.infinity,
+              child: Daily_task_custom_widget(
+                text: "UI/UX Design",
+                progress: 0.4,
+                progressBarColor: orangeColor,
+                iconcolor: Colors.grey,
+                onTap: () {},
+              ),
+            ),
+            const SizedBox(
+              height: 5,
+            ),
+            SizedBox(
+              width: double.infinity,
+              height: 80,
+              child: Daily_task_custom_widget(
+                text: "Interaction Design",
+                progress: 0.2,
+                progressBarColor: redColor,
+                iconcolor: Colors.grey,
+                onTap: () {},
+              ),
+            ),
+          ]),
+        ),
       ),
     );
   }

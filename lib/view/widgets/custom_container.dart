@@ -18,10 +18,10 @@ class CustomContainerSquareBox extends StatelessWidget {
   Widget build(BuildContext context) {
     // Return a container representing the custom square box.
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(0),
       child: Container(
-        width: 166,
-        height: 100,
+        // width: 166,
+        // height: 100,
         decoration: BoxDecoration(
           color: containerColor,
           borderRadius: BorderRadius.circular(12),
